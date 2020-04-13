@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="egov.main.dao.BoardDAO">
+	<resultMap type="java.util.HashMap" id="boardResultMap"></resultMap>
+	<!-- 게시물 생성 -->
+	<insert id="createList" parameterType="map">
+		INSERT INTO EGOV_BOARD (TITLE, CONTENT, AUTHOR, REGDATE, HIT, FILENAME, FILEURL) 
+		VALUES (#{title}, #{content}, #{author}, #{regdate}, #{hit}, #{filename}, #{fileurl})
+	</insert>
+	<!-- 게시물 리스트 전체 조회 (오라클 프로시저 사용) -->
+ 	<select id="getList" statementType="CALLABLE" parameterType="java.util.HashMap" resultType="java.util.HashMap"> 
+ 		{ CALL web_main.getList(#{currentPageNo, mode=IN},#{recordCountPerPage, mode=IN},#{ref_cursor, mode=OUT, jdbcType=CURSOR, javaType=ResultSet, resultMap=boardResultMap},#{list_count,javaType=INTEGER,mode=OUT,jdbcType=NUMERIC})}
+	</select>
+	<!-- 게시물 리스트 디테일 조회 -->
+ 	<select id="getDetail" parameterType="map" resultType="egov.main.vo.Board"> 
+ 		SELECT * FROM EGOV_BOARD WHERE ID = #{id}
+	</select>
+	<!-- 게시물 조회수 증가 -->
+ 	<update id="updateView" parameterType="map"> 
+ 		UPDATE EGOV_BOARD SET HIT = HIT + 1 WHERE ID = #{id}
+	</update>
+	<!-- 게시물 리스트 수정 -->
+ 	<update id="updateList" parameterType="map"> 
+ 		UPDATE EGOV_BOARD SET TITLE = #{title}, CONTENT = #{content}, FILENAME = #{filename}, FILEURL = #{fileurl} WHERE ID = #{id}
+	</update>
+	<delete id="deleteList" parameterType="java.util.List">
+		DELETE FROM EGOV_BOARD WHERE ID IN
+		<foreach item="ids" index="index" collection="list" open="(" separator="," close=")">
+			#{ids}
+		</foreach>
+	</delete>
+</mapper>
