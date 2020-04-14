@@ -52,5 +52,5 @@
 * **Error 페이지[404, 500, 예외처리]**
     * 커스텀 페이지 모습
 ![](media/404_error.png)
-    * web.xml 설정[로그인 세션 값도 설정]
+    * web.xml 설정[세션 타이머 값도 설정]
 ![](media/error.png)
