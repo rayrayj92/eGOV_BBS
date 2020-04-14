@@ -2,7 +2,7 @@
 
 
 ## 개요
-스프링의 기반을 둔 전자정부프레임워크 사용하여 게시판과 로그인 기능을 구현해보았습니다. 
+스프링의 기반을 둔 전자정부프레임워크를 사용하여 게시판과 로그인 기능을 구현해보았습니다. 
 
 ## 기술
 * 전자정부프레임워크 3.7.0
@@ -35,11 +35,16 @@
     * 로그아웃 [세션 파괴]
 * 에러 페이지
     * 커스텀 404,500 및 자바 예외처리 에러 페이지
+* 로그
+    * 로그 txt 파일로 저장 (log4j)
     
 ## 데모
 링크 -> https://www.youtube.com/watch?v=_fpnwSetD7s&t=5s
     
 ## 코드
+* **Oracle Procedure[Pagination에 맞게 쿼리 작성]**
+![설명](media/oracle.png)
+
 * **서버에서 유효성 검사[세션 체크]**
 ![설명](media/backend_check.png)
 
@@ -54,3 +59,6 @@
 ![](media/404_error.png)
     * web.xml 설정[세션 타이머 값도 설정]
 ![](media/error.png)
+
+* **LOG 기록[txt파일로 기록]**
+![](media/log.png)
