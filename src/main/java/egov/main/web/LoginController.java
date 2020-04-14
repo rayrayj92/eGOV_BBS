@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import egov.main.service.LoginService;
@@ -22,13 +23,13 @@ public class LoginController {
 	
 	@Resource(name="LoginService") LoginService loginService;
 	
-	@RequestMapping(value = "/login.do")
-	public String Login(){
-		
+	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
+	public String Login(HttpServletRequest request, ModelMap model){
+
 		return "login/login";
 	}
 	
-	@RequestMapping(value = "/tryLogin.do")
+	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
 	public String tryLogin(@RequestParam("email") String email, @RequestParam("password") String password,
 			HttpServletRequest request, ModelMap model) throws Exception{
 		
@@ -61,7 +62,6 @@ public class LoginController {
 				}
 			}
 		}
-		
 		return "redirect:/login.do";
 	}
 	

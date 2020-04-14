@@ -1,26 +1,25 @@
-<%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<%@ taglib prefix="c"      uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="<c:url value='/css/egovframework/sample.css'/>" />
-<title>Basic Sample</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>에러</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
-
 <body>
-    <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
-        <tr>
-            <td width="100%" height="100%" align="center" valign="middle" style="padding-top: 150px;"><table border="0" cellspacing="0" cellpadding="0">
-                    <tr>
-                        <td class="<spring:message code='image.errorBg' />">
-                            <span style="font-family: Tahoma; font-weight: bold; color: #000000; line-height: 150%; width: 440px; height: 70px;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
+	<jsp:include page="/WEB-INF/jsp/partial/nav.jsp" />
+	<div class="container" style="margin-top: 2rem;">
+		<div class="row">
+			<div class="col-2">
+			</div>
+			<div class="col-8">
+				<h1>에러 페이지</h1>
+				<h4>예외가 발생했습니다.</h4>
+			</div>
+			<div class="col-2">
+			</div>
+		</div>
+	</div>
 </body>
 </html>

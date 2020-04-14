@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>로그인</title>
+<title>에러</title>
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
@@ -14,21 +14,8 @@
 			<div class="col-2">
 			</div>
 			<div class="col-8">
-				<h4>전자정부프레임워크 - 로그인</h4>
-				<hr />
-				<form action="login.do" method="post">
-					<div class="form-group">
-						<label for="email">이메일</label><br>
-						<input type="email" name="email" class="form-control" placeholder="이메일을 입력하세요" required>
-					</div>
-					<div class="form-group">
-						<label for="password">비밀번호</label><br>
-						<input type="password" name="password" class="form-control" placeholder="비밀번호를 입력하세요" min="6">
-					</div>
-					<div class="form-group">
-						<input type="submit" class="btn btn-primary btn-block" value="로그인">
-					</div>
-				</form>
+				<h1>404 에러 페이지</h1>
+				<h4>요청하신 페이지가 없습니다.</h4>
 			</div>
 			<div class="col-2">
 			</div>
